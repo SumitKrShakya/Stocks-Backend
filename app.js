@@ -7,7 +7,11 @@ const yahoo = new yahooStockAPI();
 
 
 const app = express()
-app.use(cors());
+app.use(cors({
+    origin: '*',
+    credentials: true,
+    optionSuccessStatus: 200
+}));
 // https://query1.finance.yahoo.com/v1/finance/search?q=google
 if (process.env.NODE_ENV !== "production") {
     require('dotenv').config({ path: 'config/config.env' })
