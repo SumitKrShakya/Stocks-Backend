@@ -15,11 +15,12 @@ app.use(function(req, res, next) {
     res.setHeader('Access-Control-Allow-Credentials', true);
     next();
 });
-app.use(cors({
-    origin: '*',
-    credentials: true,
-    optionSuccessStatus: 200
-}));
+
+// app.use(cors({
+//     origin: '*',
+//     credentials: true,
+//     optionSuccessStatus: 200
+// }));
 // https://query1.finance.yahoo.com/v1/finance/search?q=google
 if (process.env.NODE_ENV !== "production") {
     require('dotenv').config({ path: 'config/config.env' })
